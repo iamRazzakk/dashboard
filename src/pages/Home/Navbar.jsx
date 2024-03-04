@@ -5,7 +5,7 @@ import { IoSunnyOutline } from "react-icons/io5";
 
 const Navbar = () => {
     return (
-        <nav className=" flex justify-between items-center  p-6">
+        <nav className=" flex justify-between items-center bg-[#171717] p-6">
             <div className="flex   gap-8  text-2xl">
                 <div className="flex gap-4 text-white font-bold items-center">
                     <FaBitcoin className="bg-white rounded-full text-[#f7931a]"></FaBitcoin>
