@@ -1,5 +1,6 @@
 import AccountAndSummery from "./Home/AccountAndSummery";
 import Navbar from "./Home/Navbar";
+import Summery from "./Home/Summery";
 
 const Home = () => {
     return (
@@ -12,6 +13,7 @@ const Home = () => {
                 {/* Content Section goes here */}
                 <Navbar />
                 <AccountAndSummery />
+                <Summery></Summery>
             </div>
         </div>
     );
