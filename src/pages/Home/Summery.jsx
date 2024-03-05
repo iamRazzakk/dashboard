@@ -57,11 +57,11 @@ const renderActiveShape = (props) => {
 
 const Summary = () => {
     return (
-        <div className="text-white w-full">
+        <div className="text-white max-w-full">
             <h1 className="text-xl font-bold">Summary</h1>
             <p>A quick summary of your entire account on Bybit and current positions</p>
             <div className="flex">
-                <div className="flex md:w-[428px] md:h-[280px]">
+                <div className="flex md:w-[400px] md:h-[280px]">
                     {/* chart */}
                     <div style={{ width: '100%', height: '100%' }}>
                         <ResponsiveContainer width="100%" height={400}>
@@ -81,11 +81,10 @@ const Summary = () => {
                     </div>
                     <div></div>
                 </div>
-                <div className='md:flex items-center justify-center'>
-
-                    <div className="flex px-2 py-1 shadow-lg rounded-2xl md:flex-1 bg-[#1e1e1e]  items-center gap-8 justify-between w-full text-white">
+                <div className='md:flex items-center gap-6 justify-center'>
+                    <div className="px-4 py-4 md:h-[#120px] md:w-[527px] flex shadow-lg rounded-2xl md:flex-1 bg-[#1e1e1e]  items-center gap-8 justify-between w-full  text-white">
                         {/* First Section - Left Side */}
-                        <div className="md:flex items-center gap-4">
+                        <div className=" md:flex items-center gap-4">
                             <img className='bg-[#fbd250] rounded-lg h-12 w-12 p-2' src="https://www.freeiconspng.com/thumbs/dollar-icon-png/dollar-black-circle-icon-28.png" alt="dollar icon" />
                             <div>
                                 <h1>Total Balance</h1>
@@ -104,11 +103,11 @@ const Summary = () => {
                         </div>
                     </div>
                     {/* Last div section */}
-                    <div className="shadow-lg md:flex-1 rounded-2xl bg-[#1e1e1e]">
+                    <div className="md:h-[#120px] px-4 py-6 md:w-[527px] shadow-lg md:flex-1 rounded-2xl bg-[#1e1e1e]">
                         <div className="flex px-2 py-1 shadow-lg rounded-2xl md:flex-1 bg-[#1e1e1e]  items-center gap-8 justify-between w-full text-white">
                             {/* First Section - Left Side */}
                             <div className="md:flex items-center gap-4">
-                                <GrDocumentPerformance className='bg-[#fbd250] rounded-lg h-12 w-12 p-2 text-black'></GrDocumentPerformance>
+                                <img className='bg-[#fbd250] rounded-lg h-12 w-12 p-2 text-black' src="https://static.thenounproject.com/png/1324046-200.png" alt="" />
                                 <div>
                                     <h1>Overall Win Rate</h1>
                                     <h1>42%</h1>
@@ -123,7 +122,21 @@ const Summary = () => {
                         </div>
                     </div>
                 </div>
+
             </div>
+            {/* Over All PNL */}
+            {/* tomoroww you shold work on it */}
+
+            <div>
+                <GrDocumentPerformance className='bg-[#fbd250] rounded-lg h-12 w-12 p-2 text-black'></GrDocumentPerformance>
+                <h1>Total Balance</h1>
+                <h1>$ 18,536.32</h1>
+                {/* <div className='md:flex gap-2 items-center'> */}
+
+            </div>
+            <div></div>
+            <div></div>
+            <div></div>
         </div >
     );
 };
