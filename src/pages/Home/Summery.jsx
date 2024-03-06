@@ -1,4 +1,4 @@
-import { PieChart, Pie, Sector, ResponsiveContainer } from 'recharts';
+import { PieChart, Pie, Sector, ResponsiveContainer, AreaChart, CartesianGrid, XAxis, YAxis, Tooltip, Area } from 'recharts';
 import { GrDocumentPerformance } from 'react-icons/gr'; // Importing GrDocumentPerformance
 
 const data = [
@@ -21,6 +21,53 @@ const renderActiveShape = (props) => {
     const ex = mx + (cos >= 0 ? 1 : -1) * 22;
     const ey = my;
     const textAnchor = cos >= 0 ? 'start' : 'end';
+
+
+    // secound chart value
+    const data = [
+        {
+            name: 'Page A',
+            uv: 4000,
+            pv: 2400,
+            amt: 2400,
+        },
+        {
+            name: 'Page B',
+            uv: 3000,
+            pv: 1398,
+            amt: 2210,
+        },
+        {
+            name: 'Page C',
+            uv: 2000,
+            pv: 9800,
+            amt: 2290,
+        },
+        {
+            name: 'Page D',
+            uv: 2780,
+            pv: 3908,
+            amt: 2000,
+        },
+        {
+            name: 'Page E',
+            uv: 1890,
+            pv: 4800,
+            amt: 2181,
+        },
+        {
+            name: 'Page F',
+            uv: 2390,
+            pv: 3800,
+            amt: 2500,
+        },
+        {
+            name: 'Page G',
+            uv: 3490,
+            pv: 4300,
+            amt: 2100,
+        },
+    ];
     return (
         <g>
             <text x={cx} y={cy} dy={8} textAnchor="middle" fill={fill}>
@@ -131,14 +178,44 @@ const Summary = () => { // Corrected the component name to Summary
                         {/* PNL */}
                         <div>
                             <div className='border border-red-500'>
-                                <div className="flex items-center gap-4">
-                                    <GrDocumentPerformance className='bg-[#fbd250] rounded-lg h-12 w-12 p-2 text-black'></GrDocumentPerformance>
+                                <div className="flex">
+                                    <div className="flex items-center gap-4">
+                                        <GrDocumentPerformance className='bg-[#fbd250] rounded-lg h-12 w-12 p-2 text-black'></GrDocumentPerformance>
+                                        <div>
+                                            <h1>Total Balance</h1>
+                                            <h1>$ 18,536.32</h1>
+                                        </div>
+                                    </div>
+                                    {/* Secound Chart  */}
                                     <div>
-                                        <h1>Total Balance</h1>
-                                        <h1>$ 18,536.32</h1>
+                                        {/* Second Chart - Area Chart */}
+                                        <div style={{ width: '100%', height: 300 }}>
+                                            <ResponsiveContainer>
+                                                <AreaChart
+                                                    data={data}
+                                                    margin={{
+                                                        top: 10,
+                                                        right: 30,
+                                                        left: 0,
+                                                        bottom: 0,
+                                                    }}
+                                                >
+                                                    <CartesianGrid strokeDasharray="3 3" />
+                                                    <XAxis dataKey="name" />
+                                                    <YAxis />
+                                                    <Tooltip />
+                                                    <Area type="monotone" dataKey="value" stroke="#8884d8" fill="#8884d8" />
+                                                </AreaChart>
+                                            </ResponsiveContainer>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button>
+                                            See analytics →
+                                        </button>
                                     </div>
                                 </div>
-                                {/* <div className='md:flex gap-2 items-center'> */}
+
                             </div>
                         </div>
                     </div>
@@ -148,4 +225,4 @@ const Summary = () => { // Corrected the component name to Summary
     );
 };
 
-export default Summary; // Corrected export statement to Summary
+export default Summary; 
