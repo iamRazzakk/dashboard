@@ -1,5 +1,6 @@
-import { PieChart, Pie, Sector, ResponsiveContainer, AreaChart, CartesianGrid, XAxis, YAxis, Tooltip, Area } from 'recharts';
+import { PieChart, Pie, Sector, ResponsiveContainer } from 'recharts';
 import { GrDocumentPerformance } from 'react-icons/gr'; // Importing GrDocumentPerformance
+import CustomAreaChart from '../../Components/AreaChart/AreaChart';
 
 const data = [
     { name: 'Futures', value: 75, color: '#facc15' },
@@ -23,51 +24,7 @@ const renderActiveShape = (props) => {
     const textAnchor = cos >= 0 ? 'start' : 'end';
 
 
-    // secound chart value
-    const data = [
-        {
-            name: 'Page A',
-            uv: 4000,
-            pv: 2400,
-            amt: 2400,
-        },
-        {
-            name: 'Page B',
-            uv: 3000,
-            pv: 1398,
-            amt: 2210,
-        },
-        {
-            name: 'Page C',
-            uv: 2000,
-            pv: 9800,
-            amt: 2290,
-        },
-        {
-            name: 'Page D',
-            uv: 2780,
-            pv: 3908,
-            amt: 2000,
-        },
-        {
-            name: 'Page E',
-            uv: 1890,
-            pv: 4800,
-            amt: 2181,
-        },
-        {
-            name: 'Page F',
-            uv: 2390,
-            pv: 3800,
-            amt: 2500,
-        },
-        {
-            name: 'Page G',
-            uv: 3490,
-            pv: 4300,
-            amt: 2100,
-        },
-    ];
+
     return (
         <g>
             <text x={cx} y={cy} dy={8} textAnchor="middle" fill={fill}>
@@ -101,14 +58,14 @@ const renderActiveShape = (props) => {
     );
 };
 
-const Summary = () => { // Corrected the component name to Summary
+const Summary = () => {
     return (
         <div className='text-white'>
             <h1 className="text-xl font-bold">Summary</h1>
             <p>A quick summary of your entire account on Bybit and current positions</p>
             <div className="md:flex items-center">
                 {/* Pie Chart */}
-                <div>
+                <div className=''>
                     <div className="flex md:w-[400px] md:h-[280px]">
                         {/* Pie Chart */}
                         <div className='border border-white' style={{ width: '100%', height: '100%' }}>
@@ -177,9 +134,9 @@ const Summary = () => { // Corrected the component name to Summary
 
                         {/* PNL */}
                         <div>
-                            <div className='border border-red-500'>
-                                <div className="flex">
-                                    <div className="flex items-center gap-4">
+                            <div className=' mt-4'>
+                                <div className="flex justify-between items-center md:h-[#120px] px-4 py-6 md:w-full shadow-lg md:flex-1 rounded-2xl bg-[#1e1e1e]">
+                                    <div className="flex-1 bg-[#1e1e1e] flex items-center gap-4">
                                         <GrDocumentPerformance className='bg-[#fbd250] rounded-lg h-12 w-12 p-2 text-black'></GrDocumentPerformance>
                                         <div>
                                             <h1>Total Balance</h1>
@@ -187,37 +144,16 @@ const Summary = () => { // Corrected the component name to Summary
                                         </div>
                                     </div>
                                     {/* Secound Chart  */}
-                                    <div>
-                                        {/* Second Chart - Area Chart */}
-                                        <div style={{ width: '100%', height: 300 }}>
-                                            <ResponsiveContainer>
-                                                <AreaChart
-                                                    data={data}
-                                                    margin={{
-                                                        top: 10,
-                                                        right: 30,
-                                                        left: 0,
-                                                        bottom: 0,
-                                                    }}
-                                                >
-                                                    <CartesianGrid strokeDasharray="3 3" />
-                                                    <XAxis dataKey="name" />
-                                                    <YAxis />
-                                                    <Tooltip />
-                                                    <Area type="monotone" dataKey="value" stroke="#8884d8" fill="#8884d8" />
-                                                </AreaChart>
-                                            </ResponsiveContainer>
-                                        </div>
-                                    </div>
-                                    <div>
+                                    <CustomAreaChart className='flex-1 '></CustomAreaChart>
+                                    <div className='flex-1 flex justify-center'> {/* Added 'flex justify-center' to center the button */}
                                         <button>
                                             See analytics →
                                         </button>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
