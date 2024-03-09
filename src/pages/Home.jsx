@@ -12,6 +12,7 @@ const Home = () => {
                 <h1>Side Navbar</h1>
             </div>
             <div className="w-full mx-auto bg-[#171717]">
+                {/*  */}
                 {/* Content Section goes here */}
                 <Navbar />
                 <AccountAndSummery />
