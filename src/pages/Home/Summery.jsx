@@ -1,7 +1,9 @@
-import { PieChart, Pie, Sector, ResponsiveContainer } from 'recharts';
+import { PureComponent } from 'react';
+import { PieChart, Pie, ResponsiveContainer, Sector } from 'recharts';
 import { GrDocumentPerformance } from 'react-icons/gr';
 import CustomAreaChart from '../../Components/AreaChart/AreaChart';
 
+// Existing data for your pie chart
 const data = [
     { name: 'Futures', value: 75, color: '#facc15' },
     { name: 'Spot', value: 25, color: '#ff0000' },
@@ -10,6 +12,7 @@ const data = [
     { name: 'Litecoin', value: 25, color: '#3B82F6' },
 ];
 
+// Render active shape function for your pie chart
 const renderActiveShape = (props) => {
     const RADIAN = Math.PI / 180;
     const { cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle, fill, payload, percent, value } = props;
@@ -56,40 +59,64 @@ const renderActiveShape = (props) => {
     );
 };
 
+
+class Example extends PureComponent {
+    state = {
+        activeIndex: 0,
+    };
+
+    onPieEnter = (_, index) => {
+        this.setState({
+            activeIndex: index,
+        });
+    };
+
+    render() {
+        return (
+            <ResponsiveContainer width="100%" height="100%">
+                <PieChart width={400} height={400}>
+                    <Pie
+                        activeIndex={this.state.activeIndex}
+                        activeShape={renderActiveShape}
+                        data={data}
+                        cx="50%"
+                        cy="50%"
+                        innerRadius={60}
+                        outerRadius={80}
+                        fill="#8884d8" // Adjusted fill color
+                        dataKey="value"
+                        onMouseEnter={this.onPieEnter}
+                    />
+                </PieChart>
+            </ResponsiveContainer>
+        );
+    }
+}
+
+
 const Summary = () => {
     return (
         <div className='text-white md:mt-20'>
             <h1 className="text-xl font-bold">Summary</h1>
             <p>A quick summary of your entire account on Bybit and current positions</p>
             <div className="md:flex items-center">
-                {/* Pie Chart */}
+                {/* Integrated pie chart */}
                 <div className=''>
                     <div className="flex md:w-[250px] ">
-                        {/* Pie Chart */}
                         <div className='' style={{ width: '100%', height: '100%' }}>
                             <ResponsiveContainer width="100%" height="100%">
-                                <PieChart>
-                                    <Pie
-                                        activeShape={renderActiveShape}
-                                        data={data}
-                                        cx="50%"
-                                        cy="50%"
-                                        innerRadius={60}
-                                        outerRadius={80}
-                                        dataKey="value"
-                                        isAnimationActive={false}
-                                    />
-                                </PieChart>
+                                <Example /> {/* Integrated Example component */}
                             </ResponsiveContainer>
                         </div>
                         <div></div>
                     </div>
                 </div>
+
                 {/* Total Balance Wining rate and PNL */}
                 <div>
                     {/* Total Balance and wining rate */}
                     <div>
-                        <div className='md:flex items-center gap-6 justify-center'>
+                        <div className='md:flex items-center gap-6 justify-center'> {/* Changed justify-center */}
                             <div className="px-4 py-4 md:h-[120px]  flex shadow-lg rounded-2xl md:flex-1 bg-[#1e1e1e]  items-center gap-8 justify-between w-full  text-white">
                                 {/* First Section - Left Side */}
                                 <div className=" md:flex items-center gap-4">
@@ -142,9 +169,9 @@ const Summary = () => {
                                             <h1>$ 18,536.32</h1>
                                         </div>
                                     </div>
-                                    {/* Second Chart */}
-                                    <CustomAreaChart className='flex-1'></CustomAreaChart>
-                                    <div className='flex-1 flex justify-center'>
+                                    {/* Secound Chart  */}
+                                    <CustomAreaChart className='flex-1 '></CustomAreaChart>
+                                    <div className='flex-1 flex justify-center'> {/* Added 'flex justify-center' to center the button */}
                                         <button>
                                             See analytics →
                                         </button>
@@ -152,6 +179,7 @@ const Summary = () => {
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>

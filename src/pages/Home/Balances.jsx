@@ -2,7 +2,7 @@ import { FaBitcoin } from "react-icons/fa";
 
 const Balances = () => {
     return (
-        <div className="text-white rounded-xl shadow-xl bg-[#1E1E1E] p-6 md:p-10">
+        <div className="text-white rounded-xl shadow-xl md:mt-20 bg-[#1E1E1E] p-6 md:p-10">
             <div className="flex justify-between">
                 <h3 className="font-bold text-xl">Balances (3)</h3>
                 <h5 className="text-[#F3C136] cursor-pointer hidden md:block">See All</h5>
