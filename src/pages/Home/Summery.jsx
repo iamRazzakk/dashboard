@@ -66,9 +66,9 @@ const Summary = () => {
             <div className="md:flex items-center">
                 {/* Pie Chart */}
                 <div className=''>
-                    <div className="flex md:w-[400px] md:h-[280px]">
+                    <div className="flex md:w-[250px] ">
                         {/* Pie Chart */}
-                        <div className='border border-white' style={{ width: '100%', height: '100%' }}>
+                        <div className='' style={{ width: '100%', height: '100%' }}>
                             <ResponsiveContainer width="100%" height={400}>
                                 <PieChart>
                                     <Pie
@@ -91,7 +91,7 @@ const Summary = () => {
                     {/* Total Balance and wining rate */}
                     <div>
                         <div className='md:flex items-center gap-6 justify-center'>
-                            <div className="px-4 py-4 md:h-[#120px] md:w-[527px] flex shadow-lg rounded-2xl md:flex-1 bg-[#1e1e1e]  items-center gap-8 justify-between w-full  text-white">
+                            <div className="px-4 py-4 md:h-[120px]  flex shadow-lg rounded-2xl md:flex-1 bg-[#1e1e1e]  items-center gap-8 justify-between w-full  text-white">
                                 {/* First Section - Left Side */}
                                 <div className=" md:flex items-center gap-4">
                                     <img className='bg-[#fbd250] rounded-lg h-12 w-12 p-2' src="https://www.freeiconspng.com/thumbs/dollar-icon-png/dollar-black-circle-icon-28.png" alt="dollar icon" />
@@ -112,7 +112,7 @@ const Summary = () => {
                                 </div>
                             </div>
                             {/* Last div section */}
-                            <div className="md:h-[#120px] px-4 py-6 md:w-[527px] shadow-lg md:flex-1 rounded-2xl bg-[#1e1e1e]">
+                            <div className="md:h-[120px] px-4 py-6  shadow-lg md:flex-1 rounded-2xl bg-[#1e1e1e]">
                                 <div className="flex px-2 py-1 shadow-lg rounded-2xl md:flex-1 bg-[#1e1e1e]  items-center gap-8 justify-between w-full text-white">
                                     {/* First Section - Left Side */}
                                     <div className="md:flex items-center gap-4">
@@ -135,7 +135,7 @@ const Summary = () => {
                         {/* PNL */}
                         <div>
                             <div className=' mt-4'>
-                                <div className="flex justify-between items-center md:h-[#120px] px-4 py-6 md:w-full shadow-lg md:flex-1 rounded-2xl bg-[#1e1e1e]">
+                                <div className="flex justify-between items-center md:h-[120px] px-4 py-6 md:w-full shadow-lg md:flex-1 rounded-2xl bg-[#1e1e1e]">
                                     <div className="flex-1 bg-[#1e1e1e] flex items-center gap-4">
                                         <GrDocumentPerformance className='bg-[#fbd250] rounded-lg h-12 w-12 p-2 text-black'></GrDocumentPerformance>
                                         <div>
