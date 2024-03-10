@@ -1,27 +1,45 @@
 import { IoGrid } from "react-icons/io5";
 import { BsJournalText } from "react-icons/bs";
 import { FaChartLine } from "react-icons/fa";
+import { useState } from "react";
+import './Sidebar.css'
 
 const SideBar = () => {
+    const [activeButton, setActiveButton] = useState("home");
     return (
         <div className="text-white">
             <div className="flex items-center gap-4">
-                <IoGrid></IoGrid>
-                <button className="bg-[#fbd251] text-black px-4 py-2 rounded-2xl gap-4">Home</button>
+                <IoGrid />
+                <button
+                    className={`sidebar-btn ${activeButton === "home" ? "active" : ""}`}
+                    onClick={() => setActiveButton("home")}
+                >
+                    Home
+                </button>
             </div>
             <div className="flex items-center gap-4">
-                <BsJournalText></BsJournalText>
-                <button className="bg-[#fbd251] text-black px-4 py-2 rounded-2xl gap-4">Daily Journal</button>
+                <BsJournalText />
+                <button
+                    className={`sidebar-btn ${activeButton === "dailyJournal" ? "active" : ""}`}
+                    onClick={() => setActiveButton("dailyJournal")}
+                >
+                    Daily Journal
+                </button>
+            </div>
+            <div className="flex items-center gap-4">
+                <FaChartLine />
+                <button
+                    className={`sidebar-btn ${activeButton === "marketCapital" ? "active" : ""}`}
+                    onClick={() => setActiveButton("marketCapital")}
+                >
+                    Market Capital
+                </button>
             </div>
             <div className="flex items-center gap-4">
                 <FaChartLine></FaChartLine>
-                <button className="bg-[#fbd251] text-black px-4 py-2 rounded-2xl gap-4">Market Capital</button>
+                <button className=" sidebar-btn text-black px-4 py-2 rounded-2xl gap-4">API Manager</button>
             </div>
-            <div className="flex items-center gap-4">
-                <FaChartLine></FaChartLine>
-                <button className="bg-[#fbd251] text-black px-4 py-2 rounded-2xl gap-4">API Manager</button>
-            </div>
-            <h1 className="px-4 py-2">Your Exchanges</h1>
+            <h1 className="px-4 py-2 md:mt-4">Your Exchanges</h1>
             <div className="flex items-center justify-center gap-4">
                 <img className="h-4 w-4 rounded-full" src="https://w7.pngwing.com/pngs/703/998/png-transparent-binance-binancecoin-blockchain-coin-blockchain-classic-icon-thumbnail.png" alt="" />
                 <div>
@@ -36,7 +54,7 @@ const SideBar = () => {
                     <h6>Account Name</h6>
                 </div>
             </div>
-            <h1 className="px-4 py-2">Settings</h1>
+            <h1 className="px-4 py-2 md:mt-4">Settings</h1>
             <div className="flex items-center justify-center gap-4">
                 <img className="h-4 w-4 rounded-full bg-[#fbd250] text-white p-2" src="https://cdn-icons-png.flaticon.com/512/563/563541.png" alt="" />
                 <div>
@@ -57,9 +75,9 @@ const SideBar = () => {
                     <img className="h-6 w-6 rounded-full" src="https://www.svgrepo.com/show/331331/bybit.svg" alt="" />
                     <img className="h-6 w-6 rounded-full" src="https://www.svgrepo.com/show/331331/bybit.svg" alt="" />
                 </div>
-                <div className="flex items-center border border-gray-400 rounded-xl px-2 py-1">
-                    <img className="h-6 w-6 bg-[#fbd250] rounded-full"  src="https://static.vecteezy.com/system/resources/thumbnails/003/101/266/small/icon-of-blank-message-dialogue-box-free-vector.jpg" alt="" />
-                    <div>
+                <div className="flex gap-4 md:mt-4 items-center border border-gray-400 rounded-xl px-2 py-1">
+                    <img className="h-6 w-6 bg-[#fbd250] rounded-full" src="https://static.vecteezy.com/system/resources/thumbnails/003/101/266/small/icon-of-blank-message-dialogue-box-free-vector.jpg" alt="" />
+                    <div className="">
                         <h1 className="font-bold">Help Center</h1>
                         <h3>Ans Here</h3>
                     </div>

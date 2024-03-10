@@ -1,10 +1,10 @@
 import { PieChart, Pie, Sector, ResponsiveContainer } from 'recharts';
-import { GrDocumentPerformance } from 'react-icons/gr'; // Importing GrDocumentPerformance
+import { GrDocumentPerformance } from 'react-icons/gr';
 import CustomAreaChart from '../../Components/AreaChart/AreaChart';
 
 const data = [
     { name: 'Futures', value: 75, color: '#facc15' },
-    { name: 'Spot', value: 25, color: '#ff0000' },   // Corrected color value
+    { name: 'Spot', value: 25, color: '#ff0000' },
     { name: 'Bitcoin', value: 300, color: '#14b8a6' },
     { name: 'Etherium', value: 25, color: '#f59e0b' },
     { name: 'Litecoin', value: 25, color: '#3B82F6' },
@@ -22,8 +22,6 @@ const renderActiveShape = (props) => {
     const ex = mx + (cos >= 0 ? 1 : -1) * 22;
     const ey = my;
     const textAnchor = cos >= 0 ? 'start' : 'end';
-
-
 
     return (
         <g>
@@ -60,7 +58,7 @@ const renderActiveShape = (props) => {
 
 const Summary = () => {
     return (
-        <div className='text-white'>
+        <div className='text-white md:mt-20'>
             <h1 className="text-xl font-bold">Summary</h1>
             <p>A quick summary of your entire account on Bybit and current positions</p>
             <div className="md:flex items-center">
@@ -69,11 +67,12 @@ const Summary = () => {
                     <div className="flex md:w-[250px] ">
                         {/* Pie Chart */}
                         <div className='' style={{ width: '100%', height: '100%' }}>
-                            <ResponsiveContainer width="100%" height={400}>
+                            <ResponsiveContainer width="100%" height="100%">
                                 <PieChart>
                                     <Pie
                                         activeShape={renderActiveShape}
-                                        data={data} cx="50%"
+                                        data={data}
+                                        cx="50%"
                                         cy="50%"
                                         innerRadius={60}
                                         outerRadius={80}
@@ -135,7 +134,7 @@ const Summary = () => {
                         {/* PNL */}
                         <div>
                             <div className=' mt-4'>
-                                <div className="flex justify-between items-center md:h-[120px] px-4 py-6 md:w-full shadow-lg md:flex-1 rounded-2xl bg-[#1e1e1e]">
+                                <div className="md:flex justify-between items-center md:h-[120px] px-4 py-6 md:w-full shadow-lg md:flex-1 rounded-2xl bg-[#1e1e1e]">
                                     <div className="flex-1 bg-[#1e1e1e] flex items-center gap-4">
                                         <GrDocumentPerformance className='bg-[#fbd250] rounded-lg h-12 w-12 p-2 text-black'></GrDocumentPerformance>
                                         <div>
@@ -143,9 +142,9 @@ const Summary = () => {
                                             <h1>$ 18,536.32</h1>
                                         </div>
                                     </div>
-                                    {/* Secound Chart  */}
-                                    <CustomAreaChart className='flex-1 '></CustomAreaChart>
-                                    <div className='flex-1 flex justify-center'> {/* Added 'flex justify-center' to center the button */}
+                                    {/* Second Chart */}
+                                    <CustomAreaChart className='flex-1'></CustomAreaChart>
+                                    <div className='flex-1 flex justify-center'>
                                         <button>
                                             See analytics →
                                         </button>
@@ -153,7 +152,6 @@ const Summary = () => {
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -161,4 +159,4 @@ const Summary = () => {
     );
 };
 
-export default Summary; 
+export default Summary;

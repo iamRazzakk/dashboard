@@ -8,11 +8,11 @@ import Summery from "./Home/Summery";
 const Home = () => {
     return (
         <div className="md:flex gap-6 bg-[#171717]  ">
-            <div className="md:w-[276px] md:h-[1428px] bg-[#1e1e1e] p-6">
+            <div className="md:w-[276px] md:min-h-screen bg-[#1e1e1e] p-6">
                 {/* Side Navbar goes here */}
                 <SideBar></SideBar>
             </div>
-            <div className=" w-[80vw] bg-[#171717]">
+            <div className=" lg:w-[80vw] bg-[#171717]">
                 {/*  */}
                 {/* Content Section goes here */}
                 <Navbar />

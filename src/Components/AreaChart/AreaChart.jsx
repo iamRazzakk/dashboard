@@ -14,7 +14,7 @@ const CustomAreaChart = () => {
     ];
 
     return (
-        <div className="w-full text-white">
+        <div className="w-screen md:w-full text-white">
             {/* Second Chart - Area Chart */}
             <div className="w-full h-full">
                 <AreaChart className="mx-auto"
