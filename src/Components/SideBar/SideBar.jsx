@@ -8,36 +8,38 @@ const SideBar = () => {
     const [activeButton, setActiveButton] = useState("home");
     return (
         <div className="text-white">
-            <div className="flex items-center gap-4">
-                <IoGrid />
-                <button
-                    className={`sidebar-btn ${activeButton === "home" ? "active" : ""}`}
+            <div className={`sidebar-btn w-full sidebar-btn flex items-center gap-4 ${activeButton === "home" ? "active" : ""}`}
                     onClick={() => setActiveButton("home")}
                 >
+                <IoGrid />
+                <button                >
                     Home
                 </button>
             </div>
-            <div className="flex items-center gap-4">
+            <div
+            
+            className={`sidebar-btn w-full sidebar-btn flex items-center gap-4 ${activeButton === "dailyJournal" ? "active" : ""}`}
+            onClick={() => setActiveButton("dailyJournal")}
+            >
                 <BsJournalText />
                 <button
-                    className={`sidebar-btn ${activeButton === "dailyJournal" ? "active" : ""}`}
-                    onClick={() => setActiveButton("dailyJournal")}
                 >
                     Daily Journal
                 </button>
             </div>
-            <div className="flex items-center gap-4">
+            <div className={`sidebar-btn w-full sidebar-btn flex items-center gap-4 ${activeButton === "marketCapital" ? "active" : ""}`}
+                    onClick={() => setActiveButton("marketCapital")}>
                 <FaChartLine />
                 <button
-                    className={`sidebar-btn ${activeButton === "marketCapital" ? "active" : ""}`}
-                    onClick={() => setActiveButton("marketCapital")}
                 >
                     Market Capital
                 </button>
             </div>
-            <div className="flex items-center gap-4">
+            <div className={`sidebar-btn w-full sidebar-btn flex items-center gap-4 ${activeButton === "aPIManager" ? "active" : ""}`}
+            onClick={() => setActiveButton("aPIManager")}
+            >
                 <FaChartLine></FaChartLine>
-                <button className=" sidebar-btn text-black px-4 py-2 rounded-2xl gap-4">API Manager</button>
+                <button>API Manager</button>
             </div>
             <h1 className="px-4 py-2 md:mt-4">Your Exchanges</h1>
             <div className="flex items-center justify-center gap-4">

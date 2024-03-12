@@ -8,73 +8,83 @@ const Balances = () => {
                 <h5 className="text-[#F3C136] cursor-pointer hidden md:block">See All</h5>
             </div>
             {/* For Table */}
-            <div className="overflow-x-auto">
-                <table className="w-full">
-                    <thead>
-                        <tr className="">
-                            <th className="p-4 font-bold text-left">Symbol</th>
-                            <th className="p-4 flex justify-between  w-3/4">
-                                <div className="px-4 text-right">Price</div>
-                                <div className="px-4">Allocation</div>
-                                <div className="px-4">Amount</div>
-                                <div className="px-4">Value</div>
+
+            <div className="relative overflow-x-auto">
+                <table className="w-full text-sm text-left rtl:text-right md:mt-10">
+                    <thead className="text-xs uppercase text-white">
+                        <tr>
+                            <th scope="col" className="px-6 text-sm py-3 rounded-s-lg" style={{ width: "50%" }}>
+                                Symbol
+                            </th>
+                            <th scope="col" className="px-6 text-sm py-3 rounded-s-lg" style={{ width: "12.5%" }}>
+                                Price
+                            </th>
+                            <th scope="col" className="px-6 text-sm py-3" style={{ width: "12.5%" }}>
+                                Allocation
+                            </th>
+                            <th scope="col" className="px-6 text-sm py-3 rounded-e-lg" style={{ width: "12.5%" }}>
+                                Amount
+                            </th>
+                            <th scope="col" className="px-6 text-sm py-3 rounded-e-lg" style={{ width: "12.5%" }}>
+                                Value
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                        {/* For BTC Data */}
-                        <tr className="border-b">
-                            <td className="p-4">Bitcoin (BTC) <FaBitcoin className="bg-white rounded-full text-[#f7931a]"></FaBitcoin></td>
-                            <td className="p-4 flex justify-between w-3/4">
-                                <div className="px-4">$30,701,75</div>
-                                <div className="px-4">70%</div>
-                                <div className="px-4">1,1739</div>
-                                <div className="px-4 text-[#2F8A54]">+$ 50,537,45</div>
+                        <tr className="">
+                            <td className="p-4 px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                <div className="flex gap-2 items-center">
+                                    <FaBitcoin className="bg-white rounded-full text-[#f7931a]" />
+                                    Bitcoin (BTC)
+                                </div>
                             </td>
+                            <td className="px-6 py-4">$30,701,75</td>
+                            <td className="px-6 py-4">70%</td>
+                            <td className="px-6 py-4">1,1739</td>
+                            <td className="px-6 py-4 text-[#2F8A54]">+$ 50,537,45</td>
                         </tr>
-                        {/* For Avalanche (AVAX) Data */}
-                        <tr className="border-b">
-                            <td className="p-4">Avalanche (AVAX) <img className="h-4 w-4 rounded-full" src="https://cryptologos.cc/logos/avalanche-avax-logo.png" alt="" /></td>
-                            <td className="p-4 flex justify-between w-3/4">
-                                <div className="px-4">$30,701,75</div>
-                                <div className="px-4">70%</div>
-                                <div className="px-4">1,1739</div>
-                                <div className="px-4 text-[#2F8A54]">+$ 50,537,45</div>
+                        <tr className="">
+                            <td className="p-4 px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                <div className="flex gap-2 items-center">
+                                    <img className="h-4 w-4 rounded-full" src="https://cryptologos.cc/logos/avalanche-avax-logo.png" alt="" />
+                                    Avalanche (AVAX)
+                                </div>
                             </td>
+                            <td className="px-6 py-4">$30,701,75</td>
+                            <td className="px-6 py-4">70%</td>
+                            <td className="px-6 py-4">1,1739</td>
+                            <td className="px-6 py-4 text-[#2F8A54]">+$ 50,537,45</td>
                         </tr>
-                        {/* For Terra Classic (LUNC) Data */}
-                        <tr className="border-b">
-                            <td className="p-4">Terra Classic (LUNC) <img className="h-4 w-4 rounded-full" src="https://s2.coinmarketcap.com/static/img/coins/200x200/4172.png" alt="" /> </td>
-                            <td className="p-4 flex justify-between w-3/4">
-                                <div className="px-4">$96.96</div>
-                                <div className="px-4">55%</div>
-                                <div className="px-4">20,025.97</div>
-                                <div className="px-4 text-[#2F8A54]">+$ 50,537,45</div>
+                        <tr className="">
+                            <td className="p-4 px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                <div className="flex gap-2 items-center">
+                                    <img className="h-4 w-4 rounded-full" src="https://s2.coinmarketcap.com/static/img/coins/200x200/4172.png" alt="" />
+                                    Terra Classic (LUNC)
+                                </div>
                             </td>
-                        </tr>
-                        {/* For Litecoin (LTC) Data */}
-                        <tr className="border-b">
-                            <td className="p-4">Litecoin (LTC) <img className="h-4 w-4 rounded-full" src="https://cryptologos.cc/logos/litecoin-ltc-logo.png" alt="" /></td>
-                            <td className="p-4 flex justify-between w-3/4">
-                                <div className="px-4">$96.96</div>
-                                <div className="px-4">35%</div>
-                                <div className="px-4">20,025.97</div>
-                                <div className="px-4 text-[#2F8A54]">+$ 50,537,45</div>
-                            </td>
-                        </tr>
-                        {/* For Solana (SOL) Data */}
-                        <tr className="border-b">
-                            <td className="p-4">Solana (SOL) <img className="h-4 w-4 rounded-full" src="https://cryptologos.cc/logos/solana-sol-logo.png" alt="" /></td>
-                            <td className="p-4 flex justify-between w-3/4">
-                                <div className="px-4">$96.96</div>
-                                <div className="px-4">23%</div>
-                                <div className="px-4">20,025.97</div>
-                                <div className="px-4 text-[#2F8A54]">+$ 50,537,45</div>
-                            </td>
+                            <td className="px-6 py-4">$96.96</td>
+                            <td className="px-6 py-4">55%</td>
+                            <td className="px-6 py-4">20,025.97</td>
+                            <td className="px-6 py-4 text-[#2F8A54]">+$ 50,537,45</td>
                         </tr>
                     </tbody>
+                    <tfoot>
+                        <tr className="font-semibold text-gray-900 dark:text-white">
+                            <td className="p-4 px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                <div className="flex gap-2 items-center">
+                                    <img className="h-4 w-4 rounded-full" src="https://cryptologos.cc/logos/solana-sol-logo.png" alt="" />
+                                    Solana (SOL)
+                                </div>
+                            </td>
+                            <td className="px-6 py-3">$96.96</td>
+                            <td className="px-6 py-3">35%</td>
+                            <td className="px-6 py-4">20,025.97</td>
+                            <td className="px-6 py-4 text-[#2F8A54]">+$ 50,537,45</td>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
+
             <h5 className="text-[#F3C136] cursor-pointer block md:hidden mt-4 text-center">See All</h5>
         </div>
     );

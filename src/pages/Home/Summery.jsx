@@ -99,9 +99,9 @@ const Summary = () => {
         <div className='text-white md:mt-20'>
             <h1 className="text-xl font-bold">Summary</h1>
             <p>A quick summary of your entire account on Bybit and current positions</p>
-            <div className="md:flex items-center">
+            <div className="md:flex items-center w-full">
                 {/* Integrated pie chart */}
-                <div className=''>
+                <div className='flex-1'>
                     <div className="flex md:w-[250px] ">
                         <div className='' style={{ width: '100%', height: '100%' }}>
                             <ResponsiveContainer width="100%" height="100%">
@@ -161,7 +161,7 @@ const Summary = () => {
                         {/* PNL */}
                         <div>
                             <div className=' mt-4'>
-                                <div className="md:flex justify-between items-center md:h-[120px] px-4 py-6 md:w-full shadow-lg md:flex-1 rounded-2xl bg-[#1e1e1e]">
+                                <div className="md:flex justify-between items-center md:h-[120px] px-4 py-6 md:min-w-full shadow-lg md:flex-1 rounded-2xl bg-[#1e1e1e]">
                                     <div className="flex-1 bg-[#1e1e1e] flex items-center gap-4">
                                         <GrDocumentPerformance className='bg-[#fbd250] rounded-lg h-12 w-12 p-2 text-black'></GrDocumentPerformance>
                                         <div>
@@ -171,10 +171,8 @@ const Summary = () => {
                                     </div>
                                     {/* Secound Chart  */}
                                     <CustomAreaChart className='flex-1 '></CustomAreaChart>
-                                    <div className='flex-1 flex justify-center'> {/* Added 'flex justify-center' to center the button */}
-                                        <button>
-                                            See analytics →
-                                        </button>
+                                    <div className=' w-full'> {/* Added 'flex justify-center' to center the button */}
+                                        <button>See analytics →</button>
                                     </div>
                                 </div>
                             </div>

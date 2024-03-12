@@ -23,7 +23,7 @@ const CustomAreaChart = () => {
                     data={data}
                     margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
                 >
-                    <Area type="monotone" dataKey="uv" stroke="black" fill="black" />
+                    <Area type="monotone" dataKey="uv" stroke="white" strokeWidth={3} fill="#2b271f" />
                 </AreaChart>
             </div>
         </div>
